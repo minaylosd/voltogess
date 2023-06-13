@@ -37,6 +37,7 @@ export default function Home() {
           height={37}
           priority
         />
+        wtf
       </div>
 
       <div className={styles.grid}>
