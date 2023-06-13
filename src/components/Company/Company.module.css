@@ -1,0 +1,97 @@
+.section {
+    margin-bottom: calc(var(--width-k) * 240);
+}
+
+.content {
+    margin: 0 calc(var(--width-k) * 80);
+    display: flex;
+}
+
+.nav__col {
+    width: calc(var(--width-k) * 325);
+}
+
+.chapter {
+    font-family: "DM Sans", sans-serif;
+    font-size: calc(var(--width-k) * 14);
+    line-height: 100%;
+    text-transform: uppercase;
+    color: var(--white);
+}
+
+.marker {
+    font-style: italic;
+    margin-right: calc(var(--width-k) * 22);
+}
+
+.info__container {
+    margin-top: calc(var(--width-k) * 366);
+    padding-top: calc(var(--width-k) * 55);
+    border-top: solid calc(var(--width-k) * 1) rgba(255, 255, 255, 0.22);
+    color: var(--white);
+}
+
+.info__key {
+    font-size: calc(var(--width-k) * 14);
+    margin-bottom: calc(var(--width-k) * 24);
+    line-height: 100%;
+}
+
+.info__value {
+    font-size: calc(var(--width-k) * 87);
+    line-height: 100%;
+}
+
+.main__col {
+    color: var(--white);
+}
+
+.first_heading {
+    font-size: calc(var(--width-k) * 90);
+    line-height: calc(var(--width-k) * 87);
+    text-transform: uppercase;
+    margin-bottom: calc(var(--width-k) * 6);
+    margin-left: calc(var(--width-k) * 108);
+}
+
+.second_heading {
+    font-size: calc(var(--width-k) * 90);
+    line-height: calc(var(--width-k) * 87);
+    text-transform: uppercase;
+    margin-bottom: calc(var(--width-k) * 6);
+}
+
+.third_heading {
+    font-size: calc(var(--width-k) * 90);
+    line-height: calc(var(--width-k) * 87);
+    text-transform: uppercase;
+    margin-bottom: calc(var(--width-k) * 42);
+    margin-left: calc(var(--width-k) * 325);
+}
+
+.description__container {
+    font-family: "DM Sans", sans-serif;
+    font-size: calc(var(--width-k) * 16);
+    margin-left: calc(var(--width-k) * 325);
+}
+
+.description {
+    width: calc(var(--width-k) * 603);
+    line-height: 152%;
+}
+
+.btn__container {
+    display: flex;
+    gap: calc(var(--width-k) * 51);
+    margin-top: calc(var(--width-k) * 44);
+}
+
+.btn {
+    font-family: "DM Sans", sans-serif;
+    font-size: calc(var(--width-k) * 16);
+    color: var(--white);
+    background-color: transparent;
+    border-bottom: solid calc(var(--width-k) * 1) var(--white);
+    padding-bottom: calc(var(--width-k) * 4);
+    line-height: 152%
+}

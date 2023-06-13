@@ -1,0 +1,34 @@
+.section {
+    margin-bottom: calc(var(--width-k) * 240);
+}
+
+.poster {
+    margin: 0 calc(var(--width-k) * 80);
+    border-bottom: solid calc(var(--width-k) * 1) rgba(255, 255, 255, 0.22);
+}
+
+.poster__img_wrapper {
+    width: calc(var(--width-k) * 1280);
+    height: calc(var(--width-k) * 597);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    border-radius: calc(var(--width-k) * 12);
+}
+
+.poster__img_description {
+    display: flex;
+    justify-content: space-between;
+    font-family: "DM Sans", sans-serif;
+    font-size: calc(var(--width-k) * 16);
+    line-height: 156%;
+    padding: calc(var(--width-k) * 27) 0;
+}
+
+.motto {
+    color: rgba(255, 255, 255, 0.52);
+}
+
+.place {
+    color: var(--white);
+}
