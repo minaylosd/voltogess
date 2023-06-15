@@ -2,8 +2,14 @@
 
 @font-face {
 	font-family: "Neue Machina";
-	src: url("/fonts/NeueMachina-regular.ttf") format("truetype");
+	src: url("/fonts/NeueMachina-Regular.ttf") format("truetype");
 	font-weight: 400;
+}
+
+@font-face {
+	font-family: "Neue Machina";
+	src: url("/fonts/NeueMachina-Ultralight.ttf") format("truetype");
+	font-weight: 200;
 }
 
 :root {

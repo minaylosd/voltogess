@@ -26,6 +26,10 @@
     margin-top: calc(var(--width-k) * 7);
 }
 
+.registered {
+    font-weight: 200;
+}
+
 .first_heading {
     font-weight: 400;
     font-size: calc(var(--width-k) * 119);

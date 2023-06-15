@@ -1,0 +1,41 @@
+.section {
+    margin-bottom: calc(var(--width-k) * 240);
+}
+
+.content {
+    display: flex;
+    gap: calc(var(--width-k) * 106);
+    margin: 0 calc(var(--width-k) * 80);
+}
+
+.sticker__wrapper {
+    background-color: rgba(255, 255, 255, 0.04);
+    border-radius: calc(var(--width-k) * 113);
+    padding: calc(var(--width-k) * 22) calc(var(--width-k) * 38);
+    margin-bottom: auto;
+    margin-top: calc(var(--width-k) * 10);
+}
+
+.img__holder {
+    width: calc(var(--width-k) * 30);
+    height: calc(var(--width-k) * 30);
+    position: relative;
+}
+
+.heading {
+    font-size: calc(var(--width-k) * 90);
+    line-height: 97%;
+    color: var(--white);
+    text-transform: uppercase;
+}
+
+.btn {
+    margin-top: calc(var(--width-k) * 73);
+    font-family: "DM Sans", sans-serif;
+    font-size: calc(var(--width-k) * 16);
+    color: var(--white);
+    background-color: transparent;
+    border-bottom: solid calc(var(--width-k) * 1) var(--white);
+    padding-bottom: calc(var(--width-k) * 4);
+    line-height: 152%
+}

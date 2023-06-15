@@ -19,7 +19,7 @@ export const Hero = () => {
                 </p>
                 <div className={styles.second_heading}>Every day</div>
             </div>
-            <div className={styles.third_heading}>& night®</div>
+            <div className={styles.third_heading}>& night<span className={styles.registered}>®</span></div>
         </div>
     </section>
   )
