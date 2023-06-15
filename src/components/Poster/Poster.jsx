@@ -1,6 +1,7 @@
 import styles from "./Poster.module.css"
 import Image from "next/image"
 import Photo from "../../../public/images/img1.jpg"
+import { RevealDiv } from "../RevealDiv/RevealDiv"
 
 export const Poster = () => {
     return (
@@ -14,12 +15,16 @@ export const Poster = () => {
                 />
             </div>
             <div className={styles.poster__img_description}>
-                <p className={styles.motto}>
-                    Transforming for growth
-                </p>
-                <p className={styles.place}>
-                    Based in California, USA
-                </p>
+                <RevealDiv>
+                    <p className={styles.motto}>
+                        Transforming for growth
+                    </p>
+                </RevealDiv>
+                <RevealDiv>
+                    <p className={styles.place}>
+                        Based in California, USA
+                    </p>
+                </RevealDiv>
             </div>
         </div>
       </section>

@@ -12,11 +12,30 @@ import { useEffect } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
 
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
     useEffect (() => {
-        gsap.from(".reveal", {
-            scrollTrigger: ".reveal",
+        const gsapItem = gsap.utils.toArray('.reveal');
+        gsapItem.forEach((gsapItem) => {
+            let tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: gsapItem,
+                    start: "top 100%",
+                    toggleActions: "play none none none",
+                }
+            });
+            tl.from(gsapItem, {
+                opacity: 0,
+                y: "100%",
+                stagger: 0.025,
+                delay: 0.1
+            });
+        });
+    });
+
+    useEffect (() => {
+        gsap.from (".staggered-reveal", {
             opacity: 0,
             y: "100%",
             stagger: 0.025,

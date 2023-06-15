@@ -46,7 +46,7 @@
     justify-content: space-between;
     align-items: center;
     padding: calc(var(--width-k) * 52) calc(var(--width-k) * 42);
-    width: 100%;
+    width: calc(var(--width-k) * 1280);
     background-color: rgba(255, 255, 255, 0.04);
     border-radius: calc(var(--width-k) * 12);
 }

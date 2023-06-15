@@ -1,8 +1,4 @@
-import { useEffect } from "react"
-import { gsap } from "gsap"
-
-
-export const RevealDiv = ({children, ...props}) => {
+export const RevealDiv = ({children, staggered, ...props}) => {
     const divStyle = {
         width: "fit-content",
         height: "fit-content",
@@ -11,7 +7,7 @@ export const RevealDiv = ({children, ...props}) => {
 
   return (
     <div style={divStyle}>
-      <div className="reveal">
+      <div className={staggered ? "staggered-reveal" : "reveal"}>
         {children}
       </div>
     </div>

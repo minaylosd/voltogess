@@ -12,6 +12,7 @@
 }
 
 .chapter {
+    display: flex;
     font-family: "DM Sans", sans-serif;
     font-size: calc(var(--width-k) * 14);
     line-height: 100%;
@@ -21,7 +22,7 @@
 
 .marker {
     font-style: italic;
-    margin-right: calc(var(--width-k) * 22);
+    padding-right: calc(var(--width-k) * 22);
 }
 
 .info__container {

@@ -45,13 +45,12 @@
 .mission__list {
     width: calc(var(--width-k) * 522);
     margin-bottom: auto;
-    border-top: solid calc(var(--width-k) * 1) rgba(255, 255, 255, 0.22);
-    border-bottom: solid calc(var(--width-k) * 1) rgba(255, 255, 255, 0.22);
     color: var(--white);
     font-family: "DM Sans", sans-serif;
 }
 
 .list__item {
+    width: calc(var(--width-k) * 522);
     display: flex;
     justify-content: space-between;
     align-items: center;
