@@ -8,8 +8,22 @@ import { Process } from "@/components/Process/Process"
 import { Blog } from "@/components/Blog/Blog"
 import { Action } from "@/components/Action/Action"
 import { Footer } from "@/components/Footer/Footer"
+import { useEffect } from "react"
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
+
 
 export default function Home() {
+    useEffect (() => {
+        gsap.from(".reveal", {
+            scrollTrigger: ".reveal",
+            opacity: 0,
+            y: "100%",
+            stagger: 0.025,
+            delay: 0.1
+        });
+    });
+
     return (
         <>
             <Header />
