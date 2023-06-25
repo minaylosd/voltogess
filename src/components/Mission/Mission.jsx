@@ -1,11 +1,12 @@
+import React from "react";
 import styles from "./Mission.module.css"
 import Map from "./Map"
 import Plus from "./Plus"
 import { RevealDiv } from "../RevealDiv/RevealDiv"
 
-export const Mission = () => {
+export const Mission = React.forwardRef((props, ref) => {
     return (
-        <section className={styles.section}>
+        <section className={styles.section} ref={ref}>
             <div className={styles.heading__container}>
                 <RevealDiv>
                     <p className={styles.chapter}>
@@ -62,4 +63,4 @@ export const Mission = () => {
             </div>
         </section>
     )
-}
+});

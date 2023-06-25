@@ -34,21 +34,21 @@
     font-weight: 400;
     font-size: calc(var(--width-k) * 119);
     text-transform: uppercase;
-    line-height: calc(var(--width-k) * 92);
+    line-height: 85%;
 }
 
 .second_heading {
     font-weight: 400;
     font-size: calc(var(--width-k) * 119);
     text-transform: uppercase;
-    line-height: calc(var(--width-k) * 92);
+    line-height: 85%;
 }
 
 .third_heading {
     font-weight: 400;
     font-size: calc(var(--width-k) * 119);
     text-transform: uppercase;
-    line-height: calc(var(--width-k) * 92);
+    line-height: 85%;
     margin-left: calc(var(--width-k) * 217);
 }
 

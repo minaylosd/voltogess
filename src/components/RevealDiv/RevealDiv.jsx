@@ -1,4 +1,6 @@
-export const RevealDiv = ({children, staggered, ...props}) => {
+import React from "react"
+
+export const RevealDiv = ({children, ...props}) => {
     const divStyle = {
         width: "fit-content",
         height: "fit-content",
@@ -7,9 +9,7 @@ export const RevealDiv = ({children, staggered, ...props}) => {
 
   return (
     <div style={divStyle}>
-      <div className={staggered ? "staggered-reveal" : "reveal"}>
-        {children}
-      </div>
+      {children}
     </div>
   )
-}
+};

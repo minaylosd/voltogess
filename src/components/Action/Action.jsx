@@ -1,12 +1,13 @@
+import React from "react";
 import styles from "./Action.module.css"
 import Image from "next/image"
 import Emoji from '/public/images/emoji.png'
 import { RevealDiv } from "../RevealDiv/RevealDiv"
 
 
-export const Action = () => {
+export const Action = React.forwardRef((props, ref) => {
     return (
-        <section className={styles.section}>
+        <section className={styles.section} ref={ref}>
             <div className={styles.content}>
                 <RevealDiv>
                     <div className={styles.sticker__wrapper}>
@@ -35,4 +36,4 @@ export const Action = () => {
             </div>
         </section>
     )
-}
+});

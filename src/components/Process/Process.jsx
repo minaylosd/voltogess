@@ -1,10 +1,11 @@
+import React from "react"
 import styles from "./Process.module.css"
 import Image from "next/image"
 import sliderImg from "/public/images/sliderImg1.jpg"
 import SliderArrow from "./sliderArrow"
 import { RevealDiv } from "../RevealDiv/RevealDiv"
 
-export const Process = () => {
+export const Process = React.forwardRef((props, ref) => {
 
     return (
         <section className={styles.section}>
@@ -68,4 +69,4 @@ export const Process = () => {
             </div>
         </section>
     )
-}
+});

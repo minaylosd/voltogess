@@ -1,60 +1,65 @@
-import { Header } from "@/components/Header/Header"
-import { Hero } from "@/components/Hero/Hero"
-import { Poster } from "@/components/Poster/Poster"
-import { Company } from "@/components/Company/Company"
-import { TwoTickerSection } from "@/components/TwoTickerSection/TwoTickerSection"
-import { Mission } from "@/components/Mission/Mission"
-import { Process } from "@/components/Process/Process"
-import { Blog } from "@/components/Blog/Blog"
-import { Action } from "@/components/Action/Action"
-import { Footer } from "@/components/Footer/Footer"
-import { useEffect } from "react"
-import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
+import { Header } from "@/components/Header/Header";
+import { Hero } from "@/components/Hero/Hero";
+import { Poster } from "@/components/Poster/Poster";
+import { Company } from "@/components/Company/Company";
+import { TwoTickerSection } from "@/components/TwoTickerSection/TwoTickerSection";
+import { Mission } from "@/components/Mission/Mission";
+import { Process } from "@/components/Process/Process";
+import { Blog } from "@/components/Blog/Blog";
+import { Action } from "@/components/Action/Action";
+import { Footer } from "@/components/Footer/Footer";
+import { useEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { useRef } from "react";
+import smoothScroll from "@/utils/smoothScroll";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
-    useEffect (() => {
-        const gsapItem = gsap.utils.toArray('.reveal');
-        gsapItem.forEach((gsapItem) => {
-            let tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: gsapItem,
-                    start: "top 100%",
-                    toggleActions: "play none none none",
-                }
-            });
-            tl.from(gsapItem, {
-                opacity: 0,
-                y: "100%",
-                stagger: 0.025,
-                delay: 0.1
-            });
-        });
-    });
 
-    useEffect (() => {
-        gsap.from (".staggered-reveal", {
+    const sectionRefs = useRef([]);
+
+    useEffect(() => {
+        sectionRefs.current.forEach((sectionRef) => {
+        const gsapItems = Array.from(sectionRef.children).flatMap((child) =>
+            Array.from(child.querySelectorAll("*"))
+        );
+
+        gsap.from(gsapItems, {
             opacity: 0,
             y: "100%",
             stagger: 0.025,
-            delay: 0.1
+            delay: 0.1,
+            scrollTrigger: {
+            trigger: sectionRef,
+            start: "top 100%",
+            toggleActions: "play none none none",
+            },
         });
-    });
+        });
+  }, []);
+    
+    useEffect(() => {
+        smoothScroll();
+    }, [])
 
-    return (
-        <>
-            <Header />
-            <Hero />
-            <Poster />
-            <Company />
+  return (
+    <div id="viewport">
+        <Header />
+        <div id="content">
+            
+            <Hero ref={(el) => sectionRefs.current.push(el)} />
+            <Poster ref={(el) => sectionRefs.current.push(el)} />
+            <Company ref={(el) => sectionRefs.current.push(el)} />
             <TwoTickerSection />
-            <Mission />
-            <Process />
-            <Blog />
-            <Action />
+            <Mission ref={(el) => sectionRefs.current.push(el)} />
+            <Process ref={(el) => sectionRefs.current.push(el)} />
+            <Blog ref={(el) => sectionRefs.current.push(el)} />
+            <Action ref={(el) => sectionRefs.current.push(el)} />
             <Footer />
-        </>
-    )
+        </div>
+      
+    </div>
+  );
 }

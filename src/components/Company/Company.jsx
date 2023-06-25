@@ -1,14 +1,19 @@
-import styles from "./Company.module.css"
-import { RevealDiv } from "../RevealDiv/RevealDiv"
+import React from "react";
+import styles from "./Company.module.css";
+import { RevealDiv } from "../RevealDiv/RevealDiv";
 
-export const Company = () => {
+export const Company = React.forwardRef((props, ref) => {
     return (
-        <section className={styles.section}>
+        <section className={styles.section} ref={ref}>
             <div className={styles.content}>
                 <div className={styles.nav__col}>
                     <div className={styles.chapter}>
-                        <RevealDiv><span className={styles.marker}>(01)</span></RevealDiv>
-                        <RevealDiv><div>Company</div></RevealDiv>
+                        <RevealDiv>
+                            <span className={styles.marker}>(01)</span>
+                        </RevealDiv>
+                        <RevealDiv>
+                            <div>Company</div>
+                        </RevealDiv>
                     </div>
                     <div className={styles.info__container}>
                         <RevealDiv>
@@ -46,4 +51,4 @@ export const Company = () => {
             </div>
         </section>
     )
-  }
+  });

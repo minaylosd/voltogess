@@ -1,10 +1,10 @@
+import React from "react";
 import styles from "./Blog.module.css"
 import { RevealDiv } from "../RevealDiv/RevealDiv"
 
-
-export const Blog = () => {
+export const Blog = React.forwardRef((props, ref) => {
     return (
-        <section className={styles.section}>
+        <section className={styles.section} ref={ref}>
             <div className={styles.content}>
                 <div className={styles.heading__container}>
                     <RevealDiv>
@@ -74,4 +74,4 @@ export const Blog = () => {
             </div>
         </section>
     )
-}
+});
