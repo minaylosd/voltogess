@@ -11,10 +11,10 @@
 
 .upper__ticker {
     position: absolute;
-    transform: translateX(calc(var(--width-k) * 206 * -1)) translateY(calc(var(--width-k) * 33)) rotate(-4deg);
+    transform: translateX(calc(var(--width-k) * 1440 * -1)) translateY(calc(var(--width-k) * 33)) rotate(-4deg);
 }
 
 .lower__ticker {
     position: absolute;
-    transform: translateX(calc(var(--width-k) * 712 * -1)) translateY(calc(var(--width-k) * 111)) rotate(4deg);
+    transform: translateX(calc(var(--width-k) * 1440 * -1)) translateY(calc(var(--width-k) * 111)) rotate(4deg);
 }

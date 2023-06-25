@@ -22,21 +22,21 @@ export default function Home() {
 
     useEffect(() => {
         sectionRefs.current.forEach((sectionRef) => {
-        const gsapItems = Array.from(sectionRef.children).flatMap((child) =>
-            Array.from(child.querySelectorAll("*"))
-        );
+            const gsapItems = Array.from(sectionRef.children).flatMap((child) =>
+                Array.from(child.querySelectorAll(".reveal"))
+            );
 
-        gsap.from(gsapItems, {
-            opacity: 0,
-            y: "100%",
-            stagger: 0.025,
-            delay: 0.1,
-            scrollTrigger: {
-            trigger: sectionRef,
-            start: "top 100%",
-            toggleActions: "play none none none",
-            },
-        });
+            gsap.from(gsapItems, {
+                opacity: 0,
+                y: 150,
+                stagger: 0.05,
+                delay: 0.1,
+                scrollTrigger: {
+                trigger: sectionRef,
+                start: "top 100%",
+                toggleActions: "play none none none",
+                },
+            });
         });
   }, []);
     

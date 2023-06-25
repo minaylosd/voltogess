@@ -3,6 +3,7 @@
     height: calc(var(--width-k) * 114);
     background-color: var(--brand); 
     display: flex;
+    gap: calc(var(--width-k) * 32);
     align-items: center;
     justify-content: center;
 }
@@ -10,12 +11,13 @@
 .ticker {
     text-transform: uppercase;
     font-size: calc(var(--width-k) * 57);
-    line-height: calc(var(--width-k) * 42);
+    line-height: 87%;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: calc(var(--width-k) * 32);
     white-space: nowrap;
+    overflow: hidden;
 }
 
 .ticker__wraper .ticker__item {

@@ -9,7 +9,9 @@ export const RevealDiv = ({children, ...props}) => {
 
   return (
     <div style={divStyle}>
-      {children}
+      <div className="reveal">
+        {children}
+      </div>
     </div>
   )
 };

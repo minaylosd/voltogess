@@ -17,14 +17,14 @@ export const Poster = React.forwardRef((props, ref) => {
             </div>
             <div className={styles.poster__img_description}>
                 <RevealDiv>
-                    <p className={styles.motto}>
+                    <div className={styles.motto}>
                         Transforming for growth
-                    </p>
+                    </div>
                 </RevealDiv>
                 <RevealDiv>
-                    <p className={styles.place}>
+                    <div className={styles.place}>
                         Based in California, USA
-                    </p>
+                    </div>
                 </RevealDiv>
             </div>
         </div>
