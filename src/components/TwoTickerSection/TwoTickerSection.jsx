@@ -68,6 +68,7 @@ export const TwoTickerSection = () => {
                 </div>
                 <div className={styles.lower__ticker}>
                     <Ticker
+                    right={true}
                     first={tickerContent.firstLine}
                     second={tickerContent.secondLine}
                     third={tickerContent.thirdLine}

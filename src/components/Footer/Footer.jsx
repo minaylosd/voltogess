@@ -10,9 +10,6 @@ export const Footer = () => {
   }
 
   useEffect(() => {
-      let currentScroll = 0;
-      let isScrollingDown = true;
-
       let tween = gsap.fromTo(".ticker__inner",{xPercent: 0}, {xPercent: -50, repeat: -1, duration: 15, ease: "linear"}).totalProgress(0);
   })
 
