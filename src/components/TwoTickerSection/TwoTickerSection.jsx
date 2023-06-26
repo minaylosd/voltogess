@@ -11,34 +11,34 @@ export const TwoTickerSection = () => {
         thirdLine: 'Revolutionary technology',
     }
     
-    useEffect(() => {
-        let currentScroll = 0;
-        let isScrollingDown = true;
+    // useEffect(() => {
+    //     let currentScroll = 0;
+    //     let isScrollingDown = true;
   
-        let tween = gsap.to(".ticker__inner__right", {xPercent: 25, repeat: -1, duration: 15, ease: "power1.out"}).totalProgress(0.5);
+    //     let tween = gsap.to(".ticker__inner__right", {xPercent: 25, repeat: -1, duration: 15, ease: "power1.out"}).totalProgress(0.5);
         
-        window.addEventListener("scroll", function(){
+    //     window.addEventListener("scroll", function(){
   
-            if ( window.pageYOffset > currentScroll ) {
-              isScrollingDown = true;
-            } else {
-              isScrollingDown = false;
-            }
+    //         if ( window.pageYOffset > currentScroll ) {
+    //           isScrollingDown = true;
+    //         } else {
+    //           isScrollingDown = false;
+    //         }
              
-            gsap.to(tween, {
-              timeScale: isScrollingDown ? 1 : -1
-            });
+    //         gsap.to(tween, {
+    //           timeScale: isScrollingDown ? 1 : -1
+    //         });
             
-            currentScroll = window.pageYOffset
-        })
-    })
+    //         currentScroll = window.pageYOffset
+    //     })
+    // })
 
     useEffect(() => {
         let currentScroll = 0;
         let isScrollingDown = true;
-  
-        let tween = gsap.to(".ticker__inner", {xPercent: -25, repeat: -1, duration: 15, ease: "power1.out"}).totalProgress(0.5);
         
+        let tweenRight = gsap.to(".ticker__inner__right", {xPercent: 25, repeat: -1, duration: 15, ease: "power1.out"}).totalProgress(0);
+
         window.addEventListener("scroll", function(){
   
             if ( window.pageYOffset > currentScroll ) {
@@ -47,7 +47,7 @@ export const TwoTickerSection = () => {
               isScrollingDown = false;
             }
              
-            gsap.to(tween, {
+            gsap.to(tweenRight, {
               timeScale: isScrollingDown ? 1 : -1
             });
             

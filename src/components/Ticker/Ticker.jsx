@@ -6,7 +6,7 @@ import { gsap } from 'gsap'
 export const Ticker = ({...props}) => {
   return (
     <div className={styles.ticker__wrapper}>
-        <div className={`${styles.ticker__inner} ${props.right? "ticker__inner__right" : "ticker__inner"}`}>
+        <div className={`${styles.ticker__inner} ticker__inner__right`}>
             <div className={`${styles.ticker} ticker__part`}>
                 <div className={styles.ticker__item}>
                     {props.first}
