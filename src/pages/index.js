@@ -30,7 +30,7 @@ export default function Home() {
                 opacity: 0,
                 y: 150,
                 stagger: 0.05,
-                delay: 0.5,
+                delay: 0.3,
                 scrollTrigger: {
                 trigger: sectionRef,
                 start: "top 100%",
