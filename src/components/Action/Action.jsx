@@ -15,6 +15,7 @@ export const Action = React.forwardRef((props, ref) => {
                             <Image
                             src={Emoji}
                             fill={true}
+                            alt="emoji"
                             />
                         </div>
                     </div>

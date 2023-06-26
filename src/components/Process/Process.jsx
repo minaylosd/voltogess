@@ -2,7 +2,7 @@ import React from "react"
 import styles from "./Process.module.css"
 import Image from "next/image"
 import sliderImg from "/public/images/sliderImg1.jpg"
-import SliderArrow from "./sliderArrow"
+import SliderArrow from "./SliderArrow"
 import { RevealDiv } from "../RevealDiv/RevealDiv"
 
 export const Process = React.forwardRef((props, ref) => {
@@ -12,6 +12,7 @@ export const Process = React.forwardRef((props, ref) => {
             <Image
             src={sliderImg}
             fill={true}
+            alt="photo"
             />
             <div className={styles.slider__bg}>
                 <div className={styles.slider__content}>
