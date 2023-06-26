@@ -10,7 +10,7 @@ const smoothScroll = () => {
     default "scroller" for you (otherwise it'd be the window/body, but it should be 
     the content <div>) 
     */
-    smoothScroll("#content", null, 1.7);
+    smoothScroll("#content", null, 2.5);
 
     // this is the helper function that sets it all up. Pass in the content <div> and then the wrapping viewport <div> (can be the elements or selector text). It also sets the default "scroller" to the content so you don't have to do that on all your ScrollTriggers.
     function smoothScroll(content, viewport, smoothness) {

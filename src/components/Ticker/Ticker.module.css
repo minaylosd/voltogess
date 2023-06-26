@@ -20,10 +20,9 @@
     overflow: hidden;
 }
 
-.ticker__wraper .ticker__item {
-    padding: 0 2rem;
-    font-size: calc(var(--width-k) * 57);
-    color: var(--bg-primary);
+.ticker__inner {
+    display: flex;
+    gap: calc(var(--width-k) * 32);
 }
 
 .arrow {

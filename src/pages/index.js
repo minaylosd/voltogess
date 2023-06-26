@@ -30,7 +30,7 @@ export default function Home() {
                 opacity: 0,
                 y: 150,
                 stagger: 0.05,
-                delay: 0.1,
+                delay: 0.5,
                 scrollTrigger: {
                 trigger: sectionRef,
                 start: "top 100%",
@@ -38,7 +38,7 @@ export default function Home() {
                 },
             });
         });
-  }, []);
+    }, []);
     
     useEffect(() => {
         smoothScroll();
@@ -48,7 +48,6 @@ export default function Home() {
     <div id="viewport">
         <Header />
         <div id="content">
-            
             <Hero ref={(el) => sectionRefs.current.push(el)} />
             <Poster ref={(el) => sectionRefs.current.push(el)} />
             <Company ref={(el) => sectionRefs.current.push(el)} />
@@ -59,7 +58,6 @@ export default function Home() {
             <Action ref={(el) => sectionRefs.current.push(el)} />
             <Footer />
         </div>
-      
     </div>
   );
 }
