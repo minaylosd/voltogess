@@ -1,9 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "./Blog.module.css"
 import { RevealDiv } from "../RevealDiv/RevealDiv"
+import cursorImage from "../../../public/images/cursorFollowImg1.png"
+import Image from "next/image";
+import { gsap } from "gsap";
 
 
 export const Blog = React.forwardRef((props, ref) => {
+    
+    const cardRefs = useRef([]);
+
     const [cards, setCards] = useState([
         {
             id: 1,
@@ -15,6 +21,8 @@ export const Blog = React.forwardRef((props, ref) => {
             description: "With Voltoges‘s commercial storage solutions, commercial and agricultural businesses can optimize their own consumption and thus increase their profitability and independence from the power grid. Voltoges‘s Commercial.",
             scale: 1,
             opacity: 1,
+            stickerScale: 1,
+            stickerRadius: 9999,
         },
         {
             id: 2,
@@ -28,6 +36,8 @@ export const Blog = React.forwardRef((props, ref) => {
             description: "Batteries are specifically designed to meet the requirements of these industries. Thanks to the use of ecological redox flow technology, they are also excellent in terms of safety and durability.",
             scale: 1,
             opacity: 1,
+            stickerScale: 0,
+            stickerRadius: 9999,
         },
         {
             id: 3,
@@ -39,15 +49,17 @@ export const Blog = React.forwardRef((props, ref) => {
             description: "In light of advancing political and social efforts to combat climate change, the energy supply is currently in a state of comprehensive change. The generation and use of climate-friendly forms of energy is of crucial importance in this context.",
             scale: 1,
             opacity: 1,
+            stickerScale: 0,
+            stickerRadius: 9999,
         },
     ]);
 
     const handleMouseEnter = (id) => {
         const updatedCards = cards.map((card) => {
             if (card.id === id) {
-                return { ...card };
+                return { ...card, stickerScale: 1, stickerRadius: 13 };
             } else {
-                return { ...card, scale: 0.95, opacity: 0.55 };
+                return { ...card, scale: 0.95, opacity: 0.55, stickerScale: 0, stickerRadius: 9999 };
             }
         });
 
@@ -58,11 +70,50 @@ export const Blog = React.forwardRef((props, ref) => {
         const resetCards = cards.map((card) => ({
             ...card,
             scale: 1,
-            opacity: 1
+            opacity: 1,
+            stickerScale: 0,
+            stickerRadius: 99999
         }));
 
         setCards(resetCards);
     };
+
+    useEffect(() => {
+
+        cardRefs.current.forEach((cardRef) => {
+
+            const gsapCards = Array.from(document.querySelectorAll(".movable"));
+            
+
+            gsap.set(gsapCards, {xPercent: -320, yPercent: -185});
+
+            var movable = document.querySelector(".movable");
+            var pos = { x: window.innerWidth / 2 , y: window.innerHeight / 2 };
+            var mouse = { x: pos.x, y: pos.y };
+            var speed = 0.1;
+
+            var fpms = 60 / 1000;
+
+            var xSet = gsap.quickSetter(gsapCards, "x", "px");
+            var ySet = gsap.quickSetter(gsapCards, "y", "px");
+
+            window.addEventListener("mousemove", e => {    
+            mouse.x = e.x;
+            mouse.y = e.y;  
+            });
+
+            gsap.ticker.add((time, deltaTime) => {
+            
+            var delta = deltaTime * fpms;
+            var dt = 1.0 - Math.pow(1.0 - speed, delta); 
+            
+            pos.x += (mouse.x - pos.x) * dt;
+            pos.y += (mouse.y - pos.y) * dt;
+            xSet(pos.x);
+            ySet(pos.y);
+            });
+        })
+    }, []);
     
     return (
         <section className={styles.section} ref={ref}>
@@ -84,7 +135,7 @@ export const Blog = React.forwardRef((props, ref) => {
                 </div>
                 <div className={styles.blog__wrapper}>
                     {cards.map((card) => (
-                        <RevealDiv key={card.id}>
+                        <RevealDiv key={card.id} style={{transform: `scale(${card.scale})`}}>
                             <div
                                 key={card.id}
                                 className={styles.blog__item}
@@ -92,8 +143,9 @@ export const Blog = React.forwardRef((props, ref) => {
                                 onMouseLeave={handleMouseLeave}
                                 style={{
                                     transform: `scale(${card.scale})`,
-                                    opacity: card.opacity
+                                    opacity: card.opacity,
                                 }}
+                                ref={(el) => cardRefs.current.push(el)}
                             >
                                 <div className={styles.info__column}>
                                     <div className={styles.info__wrapper}>
@@ -104,6 +156,38 @@ export const Blog = React.forwardRef((props, ref) => {
                                     <div className={styles.info__wrapper}>
                                         <div className={styles.info}>{card.date}</div>
                                         <div className={styles.info}>{card.author}</div>
+                                    </div>
+                                </div>
+                                <div
+                                className="movable"
+                                >
+                                    <div style={{position: "relative",overflow: "hidden", borderRadius: "13px", width: 239, height: 179}}>
+                                        <Image
+                                        src={cursorImage}
+                                        alt="cursor image"
+                                        fill={true}
+                                        style={{
+                                            transform: `scale(${card.stickerScale})`,
+                                            transition: "transform 0.4s",
+                                            transitionTimingFunction: "ease-in-out"
+                                            }}
+                                        />
+                                        <div className={styles.sticker__wrapper}>
+                                            <div
+                                            className={styles.sticker}
+                                            style={{
+                                                transform: `scale(${card.stickerScale})`,
+                                                transition: "transform 0.4s",
+                                                transitionTimingFunction: "ease-in-out"
+                                                }}
+                                            >
+                                                <div className={styles.sticker__text__wrapper}>
+                                                    <p className={styles.sticker__text}>Coming soon</p>
+                                                    <p className={styles.sticker__text}>Coming soon</p>
+                                                    <p className={styles.sticker__text}>Coming soon</p>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <p className={styles.description__column}>{card.description}</p>
