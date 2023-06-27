@@ -21,7 +21,7 @@ export const Blog = React.forwardRef((props, ref) => {
             description: "With Voltoges‘s commercial storage solutions, commercial and agricultural businesses can optimize their own consumption and thus increase their profitability and independence from the power grid. Voltoges‘s Commercial.",
             scale: 1,
             opacity: 1,
-            stickerScale: 1,
+            stickerScale: 0,
             stickerRadius: 9999,
         },
         {
