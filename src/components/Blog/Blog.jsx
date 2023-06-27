@@ -90,7 +90,7 @@ export const Blog = React.forwardRef((props, ref) => {
             var movable = document.querySelector(".movable");
             var pos = { x: window.innerWidth / 2 , y: window.innerHeight / 2 };
             var mouse = { x: pos.x, y: pos.y };
-            var speed = 0.1;
+            var speed = 0.2;
 
             var fpms = 60 / 1000;
 
@@ -114,6 +114,10 @@ export const Blog = React.forwardRef((props, ref) => {
             });
         })
     }, []);
+
+    useEffect(() => {
+        let tween = gsap.fromTo(".ticker",{xPercent: 0}, {xPercent: -25, repeat: -1, duration: 5, ease: "linear"}).totalProgress(0);
+    })
     
     return (
         <section className={styles.section} ref={ref}>
@@ -181,7 +185,8 @@ export const Blog = React.forwardRef((props, ref) => {
                                                 transitionTimingFunction: "ease-in-out"
                                                 }}
                                             >
-                                                <div className={styles.sticker__text__wrapper}>
+                                                <div className={`${styles.sticker__text__wrapper} ticker`}>
+                                                    <p className={styles.sticker__text}>Coming soon</p>
                                                     <p className={styles.sticker__text}>Coming soon</p>
                                                     <p className={styles.sticker__text}>Coming soon</p>
                                                     <p className={styles.sticker__text}>Coming soon</p>
