@@ -4,7 +4,8 @@ export const RevealDiv = ({children, ...props}) => {
     const divStyle = {
         width: "fit-content",
         height: "fit-content",
-        overflow: "hidden"
+        overflow: "hidden",
+        position: "relative"
     }
 
   return (

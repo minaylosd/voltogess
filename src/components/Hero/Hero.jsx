@@ -5,7 +5,7 @@ import { RevealDiv } from "../RevealDiv/RevealDiv"
 
 export const Hero = React.forwardRef((props, ref) => {
   return (
-    <section className={styles.section} ref={ref}>
+    <section className={`${styles.section} hero`} ref={ref}>
         <div className={styles.hero}>
             <div className={styles.asterisk__container}>
                 <RevealDiv>

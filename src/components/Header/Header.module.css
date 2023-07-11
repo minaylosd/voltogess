@@ -29,8 +29,10 @@
     border-radius: calc(var(--width-k) * 30);
     width: calc(var(--width-k) * 140);
     height: calc(var(--width-k) * 46);
+    backdrop-filter: blur(2px);
 }
 
 .burger {
     width: calc(var(--width-k) * 46);
+    backdrop-filter: blur(2px);
 }

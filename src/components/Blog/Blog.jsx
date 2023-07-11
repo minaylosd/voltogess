@@ -57,9 +57,9 @@ export const Blog = React.forwardRef((props, ref) => {
     const handleMouseEnter = (id) => {
         const updatedCards = cards.map((card) => {
             if (card.id === id) {
-                return { ...card, stickerScale: 1, stickerRadius: 13 };
+                return { ...card, stickerScale: 1, stickerRadius: "calc(var(--width-k) * 13)" };
             } else {
-                return { ...card, scale: 0.95, opacity: 0.55, stickerScale: 0, stickerRadius: 9999 };
+                return { ...card, scale: 0.95, opacity: 0.55, stickerScale: 0, stickerRadius: "calc(var(--width-k) * 13)" };
             }
         });
 
@@ -72,7 +72,7 @@ export const Blog = React.forwardRef((props, ref) => {
             scale: 1,
             opacity: 1,
             stickerScale: 0,
-            stickerRadius: 99999
+            stickerRadius: "calc(var(--width-k) * 13)"
         }));
 
         setCards(resetCards);
@@ -80,15 +80,15 @@ export const Blog = React.forwardRef((props, ref) => {
 
     useEffect(() => {
 
-        cardRefs.current.forEach((cardRef) => {
+        
 
             const gsapCards = Array.from(document.querySelectorAll(".movable"));
             
 
-            gsap.set(gsapCards, {xPercent: -320, yPercent: -185});
+            gsap.set(gsapCards, {xPercent: -100, yPercent: -100});
 
             var movable = document.querySelector(".movable");
-            var pos = { x: window.innerWidth / 2 , y: window.innerHeight / 2 };
+            var pos = { x: window.innerWidth , y: window.innerHeight };
             var mouse = { x: pos.x, y: pos.y };
             var speed = 0.2;
 
@@ -105,14 +105,14 @@ export const Blog = React.forwardRef((props, ref) => {
             gsap.ticker.add((time, deltaTime) => {
             
             var delta = deltaTime * fpms;
-            var dt = 1.0 - Math.pow(1.0 - speed, delta); 
+            var dt = 2 - Math.pow(1.0 - speed, delta); 
             
-            pos.x += (mouse.x - pos.x) * dt;
-            pos.y += (mouse.y - pos.y) * dt;
+            pos.x += (0.5 * mouse.x - pos.x) * dt;
+            pos.y += (0.5 * mouse.y - pos.y) * dt;
             xSet(pos.x);
             ySet(pos.y);
             });
-        })
+        
     }, []);
 
     useEffect(() => {
@@ -165,7 +165,7 @@ export const Blog = React.forwardRef((props, ref) => {
                                 <div
                                 className="movable"
                                 >
-                                    <div style={{position: "relative",overflow: "hidden", borderRadius: "13px", width: 239, height: 179}}>
+                                    <div style={{position: "relative",overflow: "hidden", borderRadius: "calc(var(--width-k) * 13)", width: "calc(var(--width-k) * 239)", height: "calc(var(--width-k) * 179)"}}>
                                         <Image
                                         src={cursorImage}
                                         alt="cursor image"

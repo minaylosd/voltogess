@@ -4,7 +4,6 @@ import Image from "next/image"
 import Emoji from '/public/images/emoji.png'
 import { RevealDiv } from "../RevealDiv/RevealDiv"
 
-
 export const Action = React.forwardRef((props, ref) => {
     return (
         <section className={styles.section} ref={ref}>

@@ -8,7 +8,8 @@ import { Process } from "@/components/Process/Process";
 import { Blog } from "@/components/Blog/Blog";
 import { Action } from "@/components/Action/Action";
 import { Footer } from "@/components/Footer/Footer";
-import { useEffect } from "react";
+import { Preloader } from "@/components/Preloader/Preloader";
+import { useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useRef } from "react";
@@ -21,33 +22,53 @@ export default function Home() {
     const sectionRefs = useRef([]);
 
     useEffect(() => {
-        sectionRefs.current.forEach((sectionRef) => {
-            const gsapItems = Array.from(sectionRef.children).flatMap((child) =>
-                Array.from(child.querySelectorAll(".reveal"))
-            );
+        setTimeout(() => {
+            sectionRefs.current.forEach((sectionRef) => {
+                const gsapItems = Array.from(sectionRef.children).flatMap((child) =>
+                    Array.from(child.querySelectorAll(".reveal"))
+                );
 
-            gsap.from(gsapItems, {
-                opacity: 0,
-                y: 150,
-                stagger: 0.05,
-                delay: 0.3,
-                scrollTrigger: {
-                trigger: sectionRef,
-                start: "top 100%",
-                toggleActions: "play none none none",
-                },
+                gsap.from(gsapItems, {
+                    opacity: 0,
+                    y: 150,
+                    stagger: 0.05,
+                    delay: 0,
+                    scrollTrigger: {
+                    trigger: sectionRef,
+                    start: "top 100%",
+                    toggleActions: "play none none none",
+                    },
+                });
             });
-        });
+        }, 5000)
     }, []);
     
     useEffect(() => {
         smoothScroll();
     }, [])
 
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        var tl = gsap.timeline({repeat: 0, repeatDelay: 1});
+        tl.to(".current", {x: "100%", duration: 4, ease: "power.out"});
+        tl.to(".fade", {opacity: 0, duration: 1, onComplete: closePreloader});
+    }, [])
+
+    function closePreloader() {
+        const content = document.getElementById("content");
+        content.style = {display: "block"};
+        setIsLoading(false);
+    }
+
+
   return (
     <div id="viewport">
-        <Header />
-        <div id="content">
+        {isLoading && <Preloader />}
+        <div style={{visibility: isLoading ? "hidden" : "visible" }}>
+            <Header />
+        </div>
+        <div style={{visibility: isLoading ? "hidden" : "visible" }} id="content">
             <Hero ref={(el) => sectionRefs.current.push(el)} />
             <Poster ref={(el) => sectionRefs.current.push(el)} />
             <Company ref={(el) => sectionRefs.current.push(el)} />
@@ -57,6 +78,7 @@ export default function Home() {
             <Blog ref={(el) => sectionRefs.current.push(el)} />
             <Action ref={(el) => sectionRefs.current.push(el)} />
             <Footer />
+            
         </div>
     </div>
   );

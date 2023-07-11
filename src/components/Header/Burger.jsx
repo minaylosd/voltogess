@@ -8,8 +8,8 @@ const Burger = ({...props}) => {
     fill="none"
     {...props}
   >
-    <rect width={46} height={46} fill="#fff" rx={23} />
-    <path fill="#18181A" d="M13.5 18.5h19v1h-19zM13.5 26.5h19v1h-19z" />
+    <rect width={46} height={46} fill="rgba(255, 255, 255, 0.07)" rx={23} />
+    <path fill="#fff" d="M13.5 18.5h19v1h-19zM13.5 26.5h19v1h-19z" />
   </svg>
   )
 }
