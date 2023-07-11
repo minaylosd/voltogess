@@ -36,7 +36,7 @@ export default function Home() {
                     scrollTrigger: {
                     trigger: sectionRef,
                     start: "top 100%",
-                    toggleActions: "play none none none",
+                    toggleActions: "play complete none none",
                     },
                 });
             });
