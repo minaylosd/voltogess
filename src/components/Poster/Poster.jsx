@@ -15,6 +15,15 @@ export const Poster = React.forwardRef((props, ref) => {
                     alt="photo"
                 />
             </div>
+            <div className={styles.poster__img_mob}>
+                <div className={styles.img__wrapper_mob}>
+                    <Image 
+                        src={Photo}
+                        height={580}
+                        alt="photo"
+                    />
+                </div>
+            </div>
             <div className={styles.poster__img_description}>
                 <RevealDiv>
                     <div className={styles.motto}>

@@ -17,6 +17,10 @@
     position: relative;
 }
 
+.poster__img_mob {
+    display: none;
+}
+
 .poster__img_description {
     display: flex;
     justify-content: space-between;
@@ -32,4 +36,31 @@
 
 .place {
     color: var(--white);
+}
+
+@media (max-width: 1023px) {
+    .poster {
+        border: 0;
+    }
+
+    .poster__img_wrapper {
+        display: none;
+    }
+
+    .poster__img_description {
+        display: none;
+    }
+
+    .poster__img_mob {
+        display: flex;
+        width: 100%;
+        height: 293px;
+        overflow: hidden;
+        border-radius: calc(var(--mob-k) * 8);
+    }
+
+    .img__wrapper_mob {
+        position: relative;
+        transform: translate(-40%, -43%);
+    }
 }

@@ -29,7 +29,10 @@ export const Company = React.forwardRef((props, ref) => {
                         <div className={styles.first_heading}>Unique plan.</div>
                     </RevealDiv>
                     <RevealDiv>
-                        <div className={styles.second_heading}>Exceptional team.</div>
+                        <div className={styles.second_heading}>Exceptional&nbsp;</div>
+                    </RevealDiv>
+                    <RevealDiv>
+                        <div className={styles.second_heading}>team.</div>
                     </RevealDiv>
                     <RevealDiv>
                         <div className={styles.third_heading}>One goal.</div>
@@ -43,7 +46,7 @@ export const Company = React.forwardRef((props, ref) => {
                         <RevealDiv>
                             <div className={styles.btn__container}>
                                 <button className={styles.btn}>Book a discovery call</button>
-                                <button className={styles.btn}>Write email to us</button>
+                                <button className={`${styles.btn} ${styles.mob__hidden}`}>Write email to us</button>
                             </div>
                         </RevealDiv>
                     </div>

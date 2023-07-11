@@ -15,7 +15,12 @@ export const Hero = React.forwardRef((props, ref) => {
                 </RevealDiv>
                 <RevealDiv>
                     <div className={styles.first_heading}>  
-                        Clean energy
+                        Clean 
+                    </div>
+                </RevealDiv>
+                <RevealDiv>
+                    <div className={styles.first_heading}>  
+                        energy
                     </div>
                 </RevealDiv>
             </div>
@@ -41,6 +46,20 @@ export const Hero = React.forwardRef((props, ref) => {
             <RevealDiv>
                <div className={styles.third_heading}>& night<span className={styles.registered}>®</span></div> 
             </RevealDiv>
+            <div className={styles.mob__paragraph}>
+                    <RevealDiv>
+                        100% renewable energies around the
+                    </RevealDiv>
+                    <RevealDiv>
+                        clock for a fairer and cleaner world for
+                    </RevealDiv>
+                    <RevealDiv>
+                        future generations - this is the great
+                    </RevealDiv>
+                    <RevealDiv>
+                        challenge of our time.
+                    </RevealDiv>
+                </div>
         </div>
     </section>
   )
