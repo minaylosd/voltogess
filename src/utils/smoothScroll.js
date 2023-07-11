@@ -41,11 +41,11 @@ const smoothScroll = () => {
         
 
         ScrollTrigger.addEventListener("refresh", () => {
-            window.onbeforeunload = function () {
-                window.scrollTo(0, 0);
-              }
             removeScroll();
             requestAnimationFrame(removeScroll);
+            window.onbeforeunload = function () {
+                window.scrollTo(0, 0);
+            }
         })
         ScrollTrigger.defaults({scroller: content});
         ScrollTrigger.prototype.update = p => p; // works around an issue in ScrollTrigger 3.6.1 and earlier (fixed in 3.6.2, so this line could be deleted if you're using 3.6.2 or later)
