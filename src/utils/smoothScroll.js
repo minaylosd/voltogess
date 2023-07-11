@@ -38,6 +38,10 @@ const smoothScroll = () => {
         return height - document.documentElement.clientHeight;
         }
 
+        window.onbeforeunload = function () {
+            window.scrollTo(0, 0);
+        }
+
         ScrollTrigger.addEventListener("refresh", () => {
             removeScroll();
             requestAnimationFrame(removeScroll);

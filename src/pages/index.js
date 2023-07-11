@@ -61,10 +61,7 @@ export default function Home() {
         setIsLoading(false);
     }
 
-    window.onbeforeunload = function () {
-        setIsLoading(true);
-        window.scrollTo(0, 0);
-    }
+    
 
   return (
     <div id="viewport">
