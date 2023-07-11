@@ -29,7 +29,7 @@ export default function Home() {
                 );
 
                 gsap.from(gsapItems, {
-                    opacity: 0,
+                    autoAlpha: 0,
                     y: 150,
                     stagger: 0.05,
                     delay: 0,

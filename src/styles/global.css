@@ -21,6 +21,7 @@
 --brand: rgba(112, 255, 77, 1);
 
 --width-k: calc(100vw / 1440);
+--mob-k: calc(100vw / 375);
 }
 
 * {

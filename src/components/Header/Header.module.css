@@ -36,3 +36,17 @@
     width: calc(var(--width-k) * 46);
     backdrop-filter: blur(2px);
 }
+
+@media (max-width: 1339px) {
+    .logo {
+        width: calc(var(--mob-k) * 118);
+    }
+
+    .btn {
+      display: none;
+    }
+
+    .burger {
+        width: calc(var(--mob-k) * 34);
+    }
+}
