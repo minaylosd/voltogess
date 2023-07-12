@@ -38,7 +38,7 @@ export default function Home() {
                     start: "top 100%",
                     toggleActions: "play none none none",
                     },
-                });
+                },);
             });
         }, 5000)
     }, []);
@@ -79,7 +79,6 @@ export default function Home() {
             <Blog ref={(el) => sectionRefs.current.push(el)} />
             <Action ref={(el) => sectionRefs.current.push(el)} />
             <Footer />
-            
         </div>
     </div>
   );

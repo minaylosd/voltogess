@@ -8,7 +8,7 @@ import { RevealDiv } from "../RevealDiv/RevealDiv"
 export const Process = React.forwardRef((props, ref) => {
 
     return (
-        <section className={styles.section}>
+        <section className={styles.section} ref={ref}>
             <Image
             src={sliderImg}
             fill={true}
