@@ -13,7 +13,7 @@ import { useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useRef } from "react";
-import smoothScroll from "@/utils/smoothScroll";
+import initSmoothScroll from "@/utils/initSmoothScroll";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -44,7 +44,7 @@ export default function Home() {
     }, []);
     
     useEffect(() => {
-        smoothScroll();
+        initSmoothScroll(document, 100, 20);
     }, [])
 
     const [isLoading, setIsLoading] = useState(true);
@@ -56,20 +56,18 @@ export default function Home() {
     }, [])
 
     function closePreloader() {
-        const content = document.getElementById("content");
-        content.style = {display: "block"};
         setIsLoading(false);
     }
 
     
 
   return (
-    <div id="viewport">
+    <div>
         {isLoading && <Preloader />}
         <div style={{visibility: isLoading ? "hidden" : "visible" }}>
             <Header />
         </div>
-        <div style={{visibility: isLoading ? "hidden" : "visible" }} id="content">
+        <div style={{visibility: isLoading ? "hidden" : "visible" }}>
             <Hero ref={(el) => sectionRefs.current.push(el)} />
             <Poster ref={(el) => sectionRefs.current.push(el)} />
             <Company ref={(el) => sectionRefs.current.push(el)} />
