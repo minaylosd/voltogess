@@ -5,12 +5,13 @@ import {
   NextButton,
   usePrevNextButtons,
 } from "./EmblaCarouselArrowButtons";
+import image1 from "../../../public/images/sliderImg1.jpg";
+import image2 from "../../../public/images/sliderImg2.jpg";
+import image3 from "../../../public/images/sliderImg3.jpg";
 
-const images = [
-  "../../../public/images/sliderImg1.jpg",
-  "../../../public/images/sliderImg2.jpg",
-  "../../../public/images/sliderImg3.jpg",
-];
+export const images = [image1, image2, image3];
+
+const imageByIndex = (index) => images[index % images.length];
 
 const EmblaCarousel = (props) => {
   const { slides, options } = props;
@@ -27,14 +28,14 @@ const EmblaCarousel = (props) => {
     <div className="embla">
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
-          {images.map((index) => (
+          {slides.map((index) => (
             <div className="embla__slide" key={index}>
               <div className="embla__slide__number">
                 <span>{index + 1}</span>
               </div>
               <img
                 className="embla__slide__img"
-                src={index}
+                src={imageByIndex(index)}
                 alt="Your alt text"
               />
             </div>
