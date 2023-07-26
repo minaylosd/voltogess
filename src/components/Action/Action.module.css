@@ -24,7 +24,7 @@
 
 .heading {
     font-size: calc(var(--width-k) * 90);
-    line-height: 97%;
+    line-height: 100%;
     color: var(--white);
     text-transform: uppercase;
 }

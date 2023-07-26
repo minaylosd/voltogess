@@ -36,7 +36,7 @@
 
 .heading__container {
     font-size: calc(var(--width-k) * 90);
-    line-height: calc(var(--width-k) * 87);
+    line-height: 100%;
     text-transform: uppercase;
     margin: calc(var(--width-k) * 68) auto calc(var(--width-k) * 200) auto;
     position: relative;
@@ -87,7 +87,7 @@
     font-size: calc(var(--width-k) * 16);
     text-transform: none;
     white-space: nowrap;
-    line-height: calc(var(--width-k) * 21);
+    line-height: 100%;
 }
 
 .control__wrapper {
@@ -116,7 +116,7 @@
 .txt {
     font-family: 'DM Sans', sans-serif;
     font-size: calc(var(--width-k) * 16);
-    line-height: calc(var(--width-k) * 21);
+    line-height: 100%;
 }
 
 .embla__slide {

@@ -27,7 +27,7 @@
 
 .heading {
     font-size: calc(var(--width-k) * 90);
-    line-height: calc(var(--width-k) * 87);
+    line-height: 100%;
     text-transform: uppercase;
     display: flex;
     flex-direction: column;
@@ -87,7 +87,7 @@
 
 .article {
     font-size: calc(var(--width-k) * 44);
-    line-height: 97%;
+    line-height: 100%;
     color: var(--white);
 }
 
@@ -137,7 +137,7 @@
     font-size: calc(var(--width-k) * 16);
     text-transform: none;
     white-space: nowrap;
-    line-height: calc(var(--width-k) * 21);
+    line-height: 100%;
 }
 
 .movable {

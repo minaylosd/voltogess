@@ -35,21 +35,21 @@
     font-weight: 400;
     font-size: calc(var(--width-k) * 119);
     text-transform: uppercase;
-    line-height: 85%;
+    line-height: 100%;
 }
 
 .second_heading {
     font-weight: 400;
     font-size: calc(var(--width-k) * 119);
     text-transform: uppercase;
-    line-height: 85%;
+    line-height: 100%;
 }
 
 .third_heading {
     font-weight: 400;
     font-size: calc(var(--width-k) * 119);
     text-transform: uppercase;
-    line-height: 85%;
+    line-height: 100%;
     margin-left: calc(var(--width-k) * 217);
 }
 
@@ -64,8 +64,8 @@
     font-family: "DM Sans", sans-serif;
     font-weight: 400;
     font-size: calc(var(--width-k) * 14);
-    line-height: calc(var(--width-k) * 21);
-    margin-top: calc(var(--width-k) * 2);
+    line-height: 100%;
+    margin-top: calc(var(--width-k) * 18);
 }
 
 .mob__paragraph {

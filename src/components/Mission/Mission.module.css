@@ -27,7 +27,7 @@
 
 .heading {
     font-size: calc(var(--width-k) * 90);
-    line-height: calc(var(--width-k) * 87);
+    line-height: 100%;
     text-transform: uppercase;
     margin-bottom: calc(var(--width-k) * 6);
 }
@@ -60,7 +60,7 @@
 
 .item__name {
     font-size: calc(var(--width-k) * 28);
-    line-height: calc(var(--width-k) * 42);
+    line-height: 150%;
 }
 
 .plus__wrapper {
