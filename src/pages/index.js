@@ -18,11 +18,15 @@ import initSmoothScroll from "@/utils/initSmoothScroll";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
-  const sectionRefs = useRef([]);
+  // const sectionRefs = useRef([]);
 
-  useEffect((sectionRefs) => {
-    setTimeout((sectionRefs) => {
-      sectionRefs.current.forEach((sectionRef) => {
+  useEffect(() => {
+    setTimeout(() => {
+      const sectionRefs = document.querySelectorAll(".section");
+      sectionRefs.forEach((sectionRef) => {
+        console.log(sectionRef);
+        console.log(sectionRefs);
+        console.log(sectionRefs.current);
         const gsapItems = Array.from(sectionRef.children).flatMap((child) =>
           Array.from(child.querySelectorAll(".reveal"))
         );
@@ -65,14 +69,14 @@ export default function Home() {
         <Header />
       </div>
       <div style={{ visibility: isLoading ? "hidden" : "visible" }}>
-        <Hero ref={(el) => sectionRefs.current.push(el)} />
-        <Poster ref={(el) => sectionRefs.current.push(el)} />
-        <Company ref={(el) => sectionRefs.current.push(el)} />
+        <Hero />
+        <Poster />
+        <Company />
         <TwoTickerSection />
-        <Mission ref={(el) => sectionRefs.current.push(el)} />
-        <Process ref={(el) => sectionRefs.current.push(el)} />
-        <Blog ref={(el) => sectionRefs.current.push(el)} />
-        <Action ref={(el) => sectionRefs.current.push(el)} />
+        <Mission />
+        <Process />
+        <Blog />
+        <Action />
         <Footer />
       </div>
     </div>
