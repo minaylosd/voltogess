@@ -20,8 +20,9 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Home() {
   const sectionRefs = useRef([]);
 
-  useEffect((sectionRefs) => {
-    setTimeout((sectionRefs) => {
+
+  useEffect(() => {
+    setTimeout(() => {
       sectionRefs.current.forEach((sectionRef) => {
         const gsapItems = Array.from(sectionRef.children).flatMap((child) =>
           Array.from(child.querySelectorAll(".reveal"))
