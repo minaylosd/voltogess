@@ -4,11 +4,16 @@ import Image from "next/image";
 import sliderImg from "/public/images/sliderImg1.jpg";
 import SliderArrow from "./SliderArrow";
 import { RevealDiv } from "../RevealDiv/RevealDiv";
+import EmblaCarousel from "./EmblaCarousel";
 
 export const Process = (props) => {
+  const OPTIONS = { containScroll: "trimSnaps" };
+  const SLIDE_COUNT = 3;
+  const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
   return (
     <section className={`${styles.section} section`}>
-      <Image src={sliderImg} fill={true} alt="photo" />
+      <EmblaCarousel slides={SLIDES} options={OPTIONS}></EmblaCarousel>
+      {/* <Image src={sliderImg} fill={true} alt="photo" />
       <div className={styles.slider__bg}>
         <div className={styles.slider__content}>
           <RevealDiv>
@@ -74,7 +79,7 @@ export const Process = (props) => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };

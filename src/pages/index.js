@@ -12,7 +12,6 @@ import { Preloader } from "@/components/Preloader/Preloader";
 import { useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { useRef } from "react";
 import initSmoothScroll from "@/utils/initSmoothScroll";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -22,9 +21,6 @@ export default function Home() {
     setTimeout(() => {
       const sectionRefs = document.querySelectorAll(".section");
       sectionRefs.forEach((sectionRef) => {
-        console.log(sectionRef);
-        console.log(sectionRefs);
-        console.log(sectionRefs.current);
         const gsapItems = Array.from(sectionRef.children).flatMap((child) =>
           Array.from(child.querySelectorAll(".reveal"))
         );
