@@ -18,8 +18,6 @@ import initSmoothScroll from "@/utils/initSmoothScroll";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
-  // const sectionRefs = useRef([]);
-
   useEffect(() => {
     setTimeout(() => {
       const sectionRefs = document.querySelectorAll(".section");
@@ -55,7 +53,8 @@ export default function Home() {
   useEffect(() => {
     var tl = gsap.timeline({ repeat: 0, repeatDelay: 1 });
     tl.to(".current", { x: "100%", duration: 4, ease: "power.out" });
-    tl.to(".fade", { opacity: 0, duration: 1, onComplete: closePreloader });
+    tl.to(".fade", { autoAlpha: 0, duration: 1, onComplete: closePreloader });
+    tl.to(".fade-in", { autoAlpha: 1, duration: 1 });
   }, []);
 
   function closePreloader() {
@@ -65,10 +64,12 @@ export default function Home() {
   return (
     <div>
       {isLoading && <Preloader />}
-      <div style={{ visibility: isLoading ? "hidden" : "visible" }}>
+
+      <div
+        className="fade-in"
+        style={{ visibility: isLoading ? "hidden" : "visible" }}
+      >
         <Header />
-      </div>
-      <div style={{ visibility: isLoading ? "hidden" : "visible" }}>
         <Hero />
         <Poster />
         <Company />
