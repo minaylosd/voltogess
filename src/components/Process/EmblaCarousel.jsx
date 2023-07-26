@@ -5,13 +5,7 @@ import {
   NextButton,
   usePrevNextButtons,
 } from "./EmblaCarouselArrowButtons";
-import image1 from "../../../public/images/sliderImg1.jpg";
-import image2 from "../../../public/images/sliderImg2.jpg";
-import image3 from "../../../public/images/sliderImg3.jpg";
-
-export const images = [image1, image2, image3];
-
-const imageByIndex = (index) => images[index % images.length];
+import imageByIndex from "./Process";
 
 const EmblaCarousel = (props) => {
   const { slides, options } = props;
