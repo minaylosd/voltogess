@@ -5,15 +5,6 @@ import sliderImg from "/public/images/sliderImg1.jpg";
 import SliderArrow from "./SliderArrow";
 import { RevealDiv } from "../RevealDiv/RevealDiv";
 import EmblaCarousel from "./EmblaCarousel";
-import image1 from "../../../public/images/sliderImg1.jpg";
-import image2 from "../../../public/images/sliderImg2.jpg";
-import image3 from "../../../public/images/sliderImg3.jpg";
-
-export const images = [image1, image2, image3];
-
-const imageByIndex = (index) => images[index % images.length];
-
-export default imageByIndex;
 
 export const Process = (props) => {
   const OPTIONS = { containScroll: "trimSnaps" };
@@ -22,8 +13,8 @@ export const Process = (props) => {
   return (
     <section className={`${styles.section} section`}>
       <EmblaCarousel slides={SLIDES} options={OPTIONS}></EmblaCarousel>
-      {/* <Image src={sliderImg} fill={true} alt="photo" />
-      <div className={styles.slider__bg}>
+      {/* <Image src={sliderImg} fill={true} alt="photo" /> */}
+      {/* <div className={styles.slider__bg}>
         <div className={styles.slider__content}>
           <RevealDiv>
             <p className={styles.chapter}>
