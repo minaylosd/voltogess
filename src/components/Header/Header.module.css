@@ -7,6 +7,7 @@
     margin: 0 auto;
     padding: calc(var(--width-k) * 44) calc(var(--width-k) * 80);
     z-index: 10;
+    mix-blend-mode: difference;
 }
 
 .logo {
