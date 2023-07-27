@@ -19,7 +19,7 @@
     flex-wrap: wrap;
     gap: 0 calc(var(--width-k) * 30);
     align-items: center;
-    margin-bottom: calc(var(--width-k) * 30);
+    margin-bottom: calc(var(--width-k) * 10);
 }
 
 .asterisk {
@@ -56,7 +56,7 @@
 .second_heading__wrapper {
     display: flex;
     gap: calc(var(--width-k) * 54);
-    margin-bottom: calc(var(--width-k) * 30);
+    margin-bottom: calc(var(--width-k) * 10);
 }
 
 .second_heading__paragraph {
@@ -64,7 +64,7 @@
     font-family: "DM Sans", sans-serif;
     font-weight: 400;
     font-size: calc(var(--width-k) * 14);
-    line-height: 100%;
+    line-height: 152%;
     margin-top: calc(var(--width-k) * 18);
 }
 
