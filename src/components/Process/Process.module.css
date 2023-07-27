@@ -187,9 +187,27 @@
     cursor: pointer;
     width: fit-content;
     height: fit-content;
-  }
+}
 
 .embla__button__svg {
     width: 50%;
     height: 50%;
-  }
+}
+
+  @media (max-width: 1023px) {
+    .embla__slide {
+        position: relative;
+        /* width: calc(var(--mob-k) * 1080); */
+        height: calc(var(--mob-k) * 787);
+    }
+    
+    .embla__slide__img {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: calc(var(--width-k) * 1440);
+        /* height: 100%; */
+        transform: translateX(-50%);
+        object-fit: contain;
+    }
+}
