@@ -178,6 +178,7 @@
     position: absolute;
     top: calc(var(--width-k) * 680);
     left: calc(var(--width-k) * 40);
+    display: none;
 } 
 
 .embla__button {
