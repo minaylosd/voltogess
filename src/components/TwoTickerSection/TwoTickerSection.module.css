@@ -1,20 +1,24 @@
 .section {
-    margin: calc(var(--width-k) * 240) 0;
-    width: 100%;
-    height: calc(var(--width-k) * 294);
-    overflow: hidden;
+  width: 100%;
+  height: calc(var(--width-k) * 294);
+  overflow: hidden;
 }
 
 .ticker__position {
-    position: relative;
+  position: relative;
+  transform: translateX(calc(var(--width-k) * 610 * -1));
 }
 
 .upper__ticker {
-    position: absolute;
-    transform: translateX(calc(var(--width-k) * 1440 * -1)) translateY(calc(var(--width-k) * 33)) rotate(-4deg);
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform-origin: top right;
+  transform: translateX(calc(var(--width-k) * 610)) rotate(-4deg);
 }
 
 .lower__ticker {
-    position: absolute;
-    transform: translateX(calc(var(--width-k) * 1300 * -1)) translateY(calc(var(--width-k) * 111)) rotate(4deg);
+  position: absolute;
+  transform-origin: top left;
+  transform: rotate(4deg);
 }

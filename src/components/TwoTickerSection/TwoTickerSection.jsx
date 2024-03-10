@@ -10,7 +10,12 @@ export const TwoTickerSection = () => {
     thirdLine: "Revolutionary technology",
   };
 
+  let timeline;
+
   useEffect(() => {
+    let width__k = window.innerWidth / 1440;
+    console.log(width__k);
+
     gsap.fromTo(
       ".ticker__inner__right",
       {

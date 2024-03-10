@@ -1,7 +1,5 @@
 import React from "react";
 import styles from "./Poster.module.css";
-import Image from "next/image";
-import Photo from "../../../public/images/img1.jpg";
 import { RevealDiv } from "../RevealDiv/RevealDiv";
 
 export const Poster = (props) => {
@@ -9,12 +7,12 @@ export const Poster = (props) => {
     <section className={`${styles.section} section`}>
       <div className={styles.poster}>
         <div className={styles.poster__img_wrapper}>
-          <Image src={Photo} fill={true} alt="photo" />
-        </div>
-        <div className={styles.poster__img_mob}>
-          <div className={styles.img__wrapper_mob}>
-            <Image src={Photo} height={580} alt="photo" />
-          </div>
+          <img
+            className={styles.poster__img}
+            data-animation="parallax"
+            src="/images/img1.jpg"
+            alt="photo"
+          />
         </div>
         <div className={styles.poster__img_description}>
           <RevealDiv>

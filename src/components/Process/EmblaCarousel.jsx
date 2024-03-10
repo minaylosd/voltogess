@@ -28,7 +28,7 @@ const EmblaCarousel = (props) => {
     <div className={styles.embla}>
       <div className={styles.embla__viewport} ref={emblaRef}>
         <div className={styles.embla__container}>
-          <div className={styles.embla__slide}>
+          <div className={`${styles.embla__slide} section`}>
             <div className={styles.slider__bg}>
               <div className={styles.slider__content}>
                 <RevealDiv>
@@ -49,13 +49,15 @@ const EmblaCarousel = (props) => {
                     <div className={styles.third_heading}>green energy</div>
                   </RevealDiv>
                   <div className={styles.sticker__wrapper}>
-                    <div className={styles.sticker}>
-                      <div className={styles.sticker__text__wrapper}>
-                        <p className={styles.sticker__text}>New type</p>
-                        <p className={styles.sticker__text}>New type</p>
-                        <p className={styles.sticker__text}>New type</p>
+                    <RevealDiv>
+                      <div className={styles.sticker}>
+                        <div className={styles.sticker__text__wrapper}>
+                          <p className={styles.sticker__text}>New type</p>
+                          <p className={styles.sticker__text}>New type</p>
+                          <p className={styles.sticker__text}>New type</p>
+                        </div>
                       </div>
-                    </div>
+                    </RevealDiv>
                   </div>
                 </div>
                 <div className={styles.control__wrapper}>
@@ -85,14 +87,15 @@ const EmblaCarousel = (props) => {
               </div>
             </div>
             <div className={styles.embla__slide}>
-              <Image
+              <img
+                data-animation="parallax"
                 className={styles.embla__slide__img}
-                src={image1}
+                src="/images/sliderImg1.jpg"
                 alt="Your alt text"
               />
             </div>
           </div>
-          <div className={styles.embla__slide}>
+          <div className={`${styles.embla__slide} section`}>
             <div className={styles.slider__bg}>
               <div className={styles.slider__content}>
                 <RevealDiv>
@@ -113,13 +116,15 @@ const EmblaCarousel = (props) => {
                     <div className={styles.third_heading}>green energy</div>
                   </RevealDiv>
                   <div className={styles.sticker__wrapper}>
-                    <div className={styles.sticker}>
-                      <div className={styles.sticker__text__wrapper}>
-                        <p className={styles.sticker__text}>New type</p>
-                        <p className={styles.sticker__text}>New type</p>
-                        <p className={styles.sticker__text}>New type</p>
+                    <RevealDiv>
+                      <div className={styles.sticker}>
+                        <div className={styles.sticker__text__wrapper}>
+                          <p className={styles.sticker__text}>New type</p>
+                          <p className={styles.sticker__text}>New type</p>
+                          <p className={styles.sticker__text}>New type</p>
+                        </div>
                       </div>
-                    </div>
+                    </RevealDiv>
                   </div>
                 </div>
                 <div className={styles.control__wrapper}>
@@ -149,14 +154,15 @@ const EmblaCarousel = (props) => {
               </div>
             </div>
             <div className={styles.embla__slide}>
-              <Image
+              <img
+                data-animation="parallax"
                 className={styles.embla__slide__img}
-                src={image2}
+                src="/images/sliderImg2.jpg"
                 alt="Your alt text"
               />
             </div>
           </div>
-          <div className={styles.embla__slide}>
+          <div className={`${styles.embla__slide} section`}>
             <div className={styles.slider__bg}>
               <div className={styles.slider__content}>
                 <RevealDiv>
@@ -177,13 +183,15 @@ const EmblaCarousel = (props) => {
                     <div className={styles.third_heading}>green energy</div>
                   </RevealDiv>
                   <div className={styles.sticker__wrapper}>
-                    <div className={styles.sticker}>
-                      <div className={styles.sticker__text__wrapper}>
-                        <p className={styles.sticker__text}>New type</p>
-                        <p className={styles.sticker__text}>New type</p>
-                        <p className={styles.sticker__text}>New type</p>
+                    <RevealDiv>
+                      <div className={styles.sticker}>
+                        <div className={styles.sticker__text__wrapper}>
+                          <p className={styles.sticker__text}>New type</p>
+                          <p className={styles.sticker__text}>New type</p>
+                          <p className={styles.sticker__text}>New type</p>
+                        </div>
                       </div>
-                    </div>
+                    </RevealDiv>
                   </div>
                 </div>
                 <div className={styles.control__wrapper}>
@@ -213,9 +221,10 @@ const EmblaCarousel = (props) => {
               </div>
             </div>
             <div className={styles.embla__slide}>
-              <Image
+              <img
+                data-animation="parallax"
                 className={styles.embla__slide__img}
-                src={image3}
+                src="/images/img1.jpg"
                 alt="Your alt text"
               />
             </div>
