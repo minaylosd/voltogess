@@ -1,27 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans&display=swap");
 
 @font-face {
-	font-family: "Neue Machina";
-	src: url("/fonts/NeueMachina-Regular.ttf") format("truetype");
-	font-weight: 400;
+  font-family: "Neue Machina";
+  src: url("/fonts/NeueMachina-Regular.ttf") format("truetype");
+  font-weight: 400;
 }
 
 @font-face {
-	font-family: "Neue Machina";
-	src: url("/fonts/NeueMachina-Ultralight.ttf") format("truetype");
-	font-weight: 200;
+  font-family: "Neue Machina";
+  src: url("/fonts/NeueMachina-Ultralight.ttf") format("truetype");
+  font-weight: 200;
 }
 
 :root {
---bg-primary: rgba(24, 24, 26, 1);
---bg-card: rgba(255, 255, 255, 0.04);
---bg-secondary: rgba(255, 255, 255, 0.07);
---white: rgba(255, 255, 255, 1);
---black: rgba(0, 0, 0, 1);
---brand: rgba(112, 255, 77, 1);
+  --bg-primary: rgba(24, 24, 26, 1);
+  --bg-card: rgba(255, 255, 255, 0.04);
+  --bg-secondary: rgba(255, 255, 255, 0.07);
+  --white: rgba(255, 255, 255, 1);
+  --black: rgba(0, 0, 0, 1);
+  --brand: rgba(112, 255, 77, 1);
 
---width-k: calc(100vw / 1440);
---mob-k: calc(100vw / 375);
+  --width-k: calc(100vw / 1440);
+  --mob-k: calc(100vw / 375);
 }
 
 * {
@@ -36,3 +36,6 @@ body {
   font-family: "Neue Machina", sans-serif;
 }
 
+.lower__ticker .ticker__wrapper .ticker__inner {
+  transform: translateX(calc(var(--width-k) * 550));
+}

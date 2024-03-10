@@ -10,55 +10,77 @@ export const TwoTickerSection = () => {
     thirdLine: "Revolutionary technology",
   };
 
-  let timeline;
+  let tl;
+  let animating = false;
+
+  // change direction/speed of ticker on scroll
+  function animateTicker(e) {
+    if (animating) {
+      return;
+    } else {
+      animating = true;
+      const delta = e.wheelDeltaY;
+      if (delta > 0) {
+        tl.timeScale(-2).reverse();
+        setTimeout(() => {
+          tl.timeScale(-1);
+          animating = false;
+        }, 350);
+      } else {
+        tl.timeScale(2);
+        setTimeout(() => {
+          tl.timeScale(1);
+          animating = false;
+        }, 350);
+      }
+    }
+  }
 
   useEffect(() => {
-    let width__k = window.innerWidth / 1440;
-    console.log(width__k);
-
-    gsap.fromTo(
-      ".ticker__inner__right",
-      {
-        xPercent: 0,
+    // animating tickers
+    const tickers = document.querySelectorAll('[data-animation="ticker"]');
+    tl = gsap.timeline({
+      repeat: -1,
+      onReverseComplete: function () {
+        tl.totalTime(tl.duration() * 100);
       },
-      {
-        xPercent: 25,
-        repeat: -1,
-        duration: 15,
-        yoyo: true,
-        yoyoEase: "power1.out",
-      }
-    );
+    });
 
-    gsap.fromTo(
-      ".ticker__inner",
-      {
-        xPercent: -5,
-      },
-      {
-        xPercent: -30,
-        repeat: -1,
-        duration: 15,
-        yoyo: true,
-        yoyoEase: "power1.out",
-      }
-    );
+    for (let i = 0, k = -1; i < tickers.length; i++) {
+      const width = tickers[i].getBoundingClientRect().width;
+      const distance = (width - 32) / 2;
+      tl.to(
+        tickers[i],
+        {
+          x: distance * k,
+          duration: 15,
+          ease: "linear",
+        },
+        0
+      );
+      k *= -1;
+    }
+
+    // TODO:
+    // find way to add event listener only when ticker in viewport
+    // (or simply kill animation when its not)
+    document.addEventListener("wheel", animateTicker);
   });
 
   return (
     <section className={styles.section}>
       <div className={styles.ticker__position}>
-        <div className={styles.upper__ticker}>
+        <div className={`${styles.lower__ticker} lower__ticker`}>
           <Ticker
-            right={true}
+            right={false}
             first={tickerContent.firstLine}
             second={tickerContent.secondLine}
             third={tickerContent.thirdLine}
           />
         </div>
-        <div className={styles.lower__ticker}>
+        <div className={styles.upper__ticker}>
           <Ticker
-            right={false}
+            right={true}
             first={tickerContent.firstLine}
             second={tickerContent.secondLine}
             third={tickerContent.thirdLine}

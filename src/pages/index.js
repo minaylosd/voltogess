@@ -20,6 +20,7 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    // appearance animation
     setTimeout(() => {
       const sectionRefs = document.querySelectorAll(".section");
       sectionRefs.forEach((sectionRef) => {
@@ -41,10 +42,11 @@ export default function Home() {
       });
     }, 5000);
 
+    // smooth scroll initiation
     initSmoothScroll(document, 100, 20);
 
+    // parallax animation
     const parallaxes = document.querySelectorAll('[data-animation="parallax"]');
-    console.log(parallaxes);
     parallaxes.forEach((parallax) => {
       gsap.to(parallax, {
         yPercent: 30,
@@ -57,38 +59,12 @@ export default function Home() {
       });
     });
 
+    // preloader animation
     var tl = gsap.timeline({ repeat: 0, repeatDelay: 1 });
     tl.to(".current", { x: "100%", duration: 4, ease: "power.out" });
     tl.to(".fade", { autoAlpha: 0, duration: 1, onComplete: closePreloader });
     tl.from(".fade-in", { autoAlpha: 0, duration: 0.25, delay: 0.5 });
   }, []);
-
-  // useEffect(() => {
-  //   initSmoothScroll(document, 100, 20);
-  // }, []);
-
-  // useEffect(() => {
-  //   const parallaxes = document.querySelectorAll('[data-animation="parallax"]');
-  //   console.log(parallaxes);
-  //   parallaxes.forEach((parallax) => {
-  //     gsap.to(parallax, {
-  //       yPercent: 30,
-  //       scrollTrigger: {
-  //         trigger: parallax,
-  //         start: "top bottom",
-  //         end: "bottom top",
-  //         scrub: true,
-  //       },
-  //     });
-  //   });
-  // }, []);
-
-  // useEffect(() => {
-  //   var tl = gsap.timeline({ repeat: 0, repeatDelay: 1 });
-  //   tl.to(".current", { x: "100%", duration: 4, ease: "power.out" });
-  //   tl.to(".fade", { autoAlpha: 0, duration: 1, onComplete: closePreloader });
-  //   tl.from(".fade-in", { autoAlpha: 0, duration: 0.25, delay: 0.5 });
-  // }, []);
 
   function closePreloader() {
     setIsLoading(false);
