@@ -55,6 +55,7 @@
   margin-bottom: auto;
   padding: calc(var(--width-k) * 34) 0;
   height: calc(var(--width-k) * 110);
+  cursor: pointer;
 }
 
 .list__btn {

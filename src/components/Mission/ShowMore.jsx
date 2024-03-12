@@ -18,8 +18,10 @@ export const ShowMore = ({ ...props }) => {
       `[data-animation="lines"]`
     );
 
+    const height = (window.innerWidth / 1440) * 323;
+
     gsap.to(showRef.current, {
-      height: 323,
+      height: height,
       duration: 0.3,
     });
 
@@ -52,8 +54,10 @@ export const ShowMore = ({ ...props }) => {
       `[data-animation="lines"]`
     );
 
+    const height = (window.innerWidth / 1440) * 110;
+
     gsap.to(showRef.current, {
-      height: 110,
+      height: height,
       duration: 0.3,
       onComplete: setIsShown(false),
     });
