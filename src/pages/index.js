@@ -9,7 +9,7 @@ import { Blog } from "@/components/Blog/Blog";
 import { Action } from "@/components/Action/Action";
 import { Footer } from "@/components/Footer/Footer";
 import { Preloader } from "@/components/Preloader/Preloader";
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import initSmoothScroll from "@/utils/initSmoothScroll";
@@ -17,31 +17,9 @@ import initSmoothScroll from "@/utils/initSmoothScroll";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(true);
+  const isLoading = useRef(true);
 
   useEffect(() => {
-    // appearance animation
-    setTimeout(() => {
-      const sectionRefs = document.querySelectorAll(".section");
-      sectionRefs.forEach((sectionRef) => {
-        const gsapItems = Array.from(sectionRef.children).flatMap((child) =>
-          Array.from(child.querySelectorAll(".reveal"))
-        );
-
-        gsap.from(gsapItems, {
-          autoAlpha: 0,
-          y: 150,
-          stagger: 0.05,
-          delay: 0,
-          scrollTrigger: {
-            trigger: sectionRef,
-            start: "top 100%",
-            toggleActions: "play none none none",
-          },
-        });
-      });
-    }, 5000);
-
     // smooth scroll initiation
     initSmoothScroll(document, 100, 20);
 
@@ -66,8 +44,34 @@ export default function Home() {
     tl.from(".fade-in", { autoAlpha: 0, duration: 0.25, delay: 0.5 });
   }, []);
 
+  // text appear when section gets to viewport
+  function registerAppearAnimations() {
+    const sectionRefs = document.querySelectorAll(".section");
+    // loop through sections,every child with class reveal into array
+    sectionRefs.forEach((sectionRef) => {
+      console.log(sectionRef);
+      console.log(sectionRef.children);
+      const gsapItems = Array.from(sectionRef.children).flatMap((child) =>
+        Array.from(child.querySelectorAll(".reveal"))
+      );
+
+      gsap.from(gsapItems, {
+        autoAlpha: 0,
+        y: 150,
+        stagger: 0.05,
+        delay: 0.1,
+        scrollTrigger: {
+          trigger: sectionRef,
+          start: "top bottom",
+          toggleActions: "play none none none",
+        },
+      });
+    });
+  }
+
   function closePreloader() {
-    setIsLoading(false);
+    isLoading.current = false;
+    registerAppearAnimations();
   }
 
   return (

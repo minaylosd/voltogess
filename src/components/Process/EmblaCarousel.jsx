@@ -1,6 +1,5 @@
 import React from "react";
 import useEmblaCarousel from "embla-carousel-react";
-import Image from "next/image";
 import styles from "./Process.module.css";
 import { RevealDiv } from "../RevealDiv/RevealDiv";
 import SliderArrow from "./SliderArrow";
@@ -9,9 +8,6 @@ import {
   NextButton,
   usePrevNextButtons,
 } from "./EmblaCarouselArrowButtons";
-import image1 from "../../../public/images/sliderImg1.jpg";
-import image2 from "../../../public/images/sliderImg2.jpg";
-import image3 from "../../../public/images/sliderImg3.jpg";
 
 const EmblaCarousel = (props) => {
   const { slides, options } = props;
@@ -90,7 +86,7 @@ const EmblaCarousel = (props) => {
               <img
                 data-animation="parallax"
                 className={styles.embla__slide__img}
-                src="/images/sliderImg1.jpg"
+                src="/images/img1.webp"
                 alt="Your alt text"
               />
             </div>
@@ -157,7 +153,7 @@ const EmblaCarousel = (props) => {
               <img
                 data-animation="parallax"
                 className={styles.embla__slide__img}
-                src="/images/sliderImg2.jpg"
+                src="/images/img2.webp"
                 alt="Your alt text"
               />
             </div>
@@ -224,7 +220,7 @@ const EmblaCarousel = (props) => {
               <img
                 data-animation="parallax"
                 className={styles.embla__slide__img}
-                src="/images/img1.jpg"
+                src="/images/img3.webp"
                 alt="Your alt text"
               />
             </div>

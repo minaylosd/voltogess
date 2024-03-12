@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import styles from "./Blog.module.css";
 import { RevealDiv } from "../RevealDiv/RevealDiv";
-import cursorImage from "../../../public/images/cursorFollowImg1.png";
-import Image from "next/image";
 import { gsap } from "gsap";
 
 export const Blog = (props) => {
@@ -186,11 +184,11 @@ export const Blog = (props) => {
                       height: "calc(var(--width-k) * 179)",
                     }}
                   >
-                    <Image
-                      src={cursorImage}
+                    <img
+                      src="/images/img2.webp"
                       alt="cursor image"
-                      fill={true}
                       style={{
+                        width: "100%",
                         transform: `scale(${card.stickerScale})`,
                         transition: "transform 0.4s",
                         transitionTimingFunction: "ease-in-out",

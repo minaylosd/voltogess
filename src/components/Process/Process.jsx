@@ -1,7 +1,5 @@
 import React from "react";
 import styles from "./Process.module.css";
-import Image from "next/image";
-import sliderImg from "/public/images/sliderImg1.jpg";
 import SliderArrow from "./SliderArrow";
 import { RevealDiv } from "../RevealDiv/RevealDiv";
 import EmblaCarousel from "./EmblaCarousel";

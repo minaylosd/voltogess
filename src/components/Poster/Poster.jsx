@@ -10,7 +10,7 @@ export const Poster = (props) => {
           <img
             className={styles.poster__img}
             data-animation="parallax"
-            src="/images/img1.jpg"
+            src="/images/img3.webp"
             alt="photo"
           />
         </div>
