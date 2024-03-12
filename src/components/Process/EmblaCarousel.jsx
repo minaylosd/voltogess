@@ -28,7 +28,7 @@ const EmblaCarousel = (props) => {
     <div className={styles.embla}>
       <div className={styles.embla__viewport} ref={emblaRef}>
         <div className={styles.embla__container}>
-          <div className={`${styles.embla__slide} section`}>
+          <div className={styles.embla__slide}>
             <div className={styles.slider__bg}>
               <div className={styles.slider__content}>
                 <RevealDiv>
@@ -95,7 +95,7 @@ const EmblaCarousel = (props) => {
               />
             </div>
           </div>
-          <div className={`${styles.embla__slide} section`}>
+          <div className={styles.embla__slide}>
             <div className={styles.slider__bg}>
               <div className={styles.slider__content}>
                 <RevealDiv>
@@ -162,7 +162,7 @@ const EmblaCarousel = (props) => {
               />
             </div>
           </div>
-          <div className={`${styles.embla__slide} section`}>
+          <div className={styles.embla__slide}>
             <div className={styles.slider__bg}>
               <div className={styles.slider__content}>
                 <RevealDiv>
