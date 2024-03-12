@@ -9,7 +9,7 @@ export const Action = React.forwardRef((props, ref) => {
         <RevealDiv>
           <div className={styles.sticker__wrapper}>
             <div className={styles.img__holder}>
-              <img src="/images/emoji.webp" alt="emoji" />
+              <img src="/images/emoji.png" alt="emoji" />
             </div>
           </div>
         </RevealDiv>

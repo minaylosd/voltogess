@@ -185,7 +185,7 @@ export const Blog = (props) => {
                     }}
                   >
                     <img
-                      src="/images/img2.webp"
+                      src="/images/img2.jpg"
                       alt="cursor image"
                       style={{
                         width: "100%",

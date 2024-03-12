@@ -9,7 +9,7 @@ export const Process = (props) => {
   const SLIDE_COUNT = 3;
   const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
   return (
-    <section className={`${styles.section} section`}>
+    <section className={styles.section}>
       <EmblaCarousel slides={SLIDES} options={OPTIONS}></EmblaCarousel>
       {/* <Image src={sliderImg} fill={true} alt="photo" /> */}
       {/* <div className={styles.slider__bg}>

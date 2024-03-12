@@ -49,8 +49,6 @@ export default function Home() {
     const sectionRefs = document.querySelectorAll(".section");
     // loop through sections,every child with class reveal into array
     sectionRefs.forEach((sectionRef) => {
-      console.log(sectionRef);
-      console.log(sectionRef.children);
       const gsapItems = Array.from(sectionRef.children).flatMap((child) =>
         Array.from(child.querySelectorAll(".reveal"))
       );
