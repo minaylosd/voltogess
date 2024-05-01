@@ -5,6 +5,7 @@ import { gsap } from "gsap";
 
 export const Blog = (props) => {
   const cardRefs = useRef([]);
+  // const sectionRef = useRef(null);
 
   const [cards, setCards] = useState([
     {
@@ -76,6 +77,7 @@ export const Blog = (props) => {
   };
 
   const handleMouseLeave = () => {
+    // sectionRef.current.removeEventListener("click", sectionRef.current.fn);
     const resetCards = cards.map((card) => ({
       ...card,
       scale: 1,
@@ -83,42 +85,23 @@ export const Blog = (props) => {
       stickerScale: 0,
       stickerRadius: "calc(var(--width-k) * 13)",
     }));
-
     setCards(resetCards);
   };
 
   useEffect(() => {
-    const gsapCards = Array.from(document.querySelectorAll(".movable"));
-
-    gsap.set(gsapCards, { xPercent: -100, yPercent: -100 });
-
-    var movable = document.querySelector(".movable");
-    var pos = { x: window.innerWidth, y: window.innerHeight };
-    var mouse = { x: pos.x, y: pos.y };
-    var speed = 0.2;
-
-    var fpms = 60 / 1000;
-
-    var xSet = gsap.quickSetter(gsapCards, "x", "px");
-    var ySet = gsap.quickSetter(gsapCards, "y", "px");
-
-    window.addEventListener("mousemove", (e) => {
-      mouse.x = e.x;
-      mouse.y = e.y;
+    const cards = document.querySelectorAll(".card-animation");
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    cards.forEach((card) => {
+      const movable = card.querySelector(".movable");
+      const movableWidth = movable.getBoundingClientRect().width;
+      const movableHeight = movable.getBoundingClientRect().height;
+      card.addEventListener("mousemove", function (event) {
+        let posX = event.screenX - 0.5 * width + 0.5 * movableWidth;
+        let posY = event.screenY - 0.5 * height - 0.5 * movableHeight;
+        gsap.set(movable, { y: posY, x: posX, delay: 0.2 });
+      });
     });
-
-    gsap.ticker.add((time, deltaTime) => {
-      var delta = deltaTime * fpms;
-      var dt = 2 - Math.pow(1.0 - speed, delta);
-
-      pos.x += (0.5 * mouse.x - pos.x) * dt;
-      pos.y += (0.5 * mouse.y - pos.y) * dt;
-      xSet(pos.x);
-      ySet(pos.y);
-    });
-  }, []);
-
-  useEffect(() => {
     let tween = gsap
       .fromTo(
         ".ticker",
@@ -153,8 +136,9 @@ export const Blog = (props) => {
               style={{ transform: `scale(${card.scale})` }}
             >
               <div
+                id={card.id}
                 key={card.id}
-                className={styles.blog__item}
+                className={`${styles.blog__item} card-animation`}
                 onMouseEnter={() => handleMouseEnter(card.id)}
                 onMouseLeave={handleMouseLeave}
                 style={{
