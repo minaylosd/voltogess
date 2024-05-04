@@ -88,20 +88,20 @@ export const Blog = (props) => {
     setCards(resetCards);
   };
 
-  useEffect(() => {
-    const cards = document.querySelectorAll(".card-animation");
+  const handleMouseMove = (event) => {
+    const hoveredElement = event.currentTarget;
+    console.log(hoveredElement);
+    const movable = hoveredElement.querySelector(".movable");
     const width = window.innerWidth;
     const height = window.innerHeight;
-    cards.forEach((card) => {
-      const movable = card.querySelector(".movable");
-      const movableWidth = movable.getBoundingClientRect().width;
-      const movableHeight = movable.getBoundingClientRect().height;
-      card.addEventListener("mousemove", function (event) {
-        let posX = event.screenX - 0.5 * width - 0.5 * movableWidth;
-        let posY = event.screenY - 0.5 * height - 0.5 * movableHeight;
-        gsap.to(movable, { y: posY, x: posX, delay: 0.2 });
-      });
-    });
+    const movableWidth = movable.getBoundingClientRect().width;
+    const movableHeight = movable.getBoundingClientRect().height;
+    let posX = event.screenX - 0.5 * width + 0.5 * movableWidth;
+    let posY = event.screenY - 0.5 * height - 0.5 * movableHeight;
+    gsap.to(movable, { y: posY, x: posX, delay: 0.2 });
+  };
+
+  useEffect(() => {
     let tween = gsap
       .fromTo(
         ".ticker",
@@ -141,6 +141,7 @@ export const Blog = (props) => {
                 className={`${styles.blog__item} card-animation`}
                 onMouseEnter={() => handleMouseEnter(card.id)}
                 onMouseLeave={handleMouseLeave}
+                onMouseMove={handleMouseMove}
                 style={{
                   transform: `scale(${card.scale})`,
                   opacity: card.opacity,
