@@ -97,9 +97,9 @@ export const Blog = (props) => {
       const movableWidth = movable.getBoundingClientRect().width;
       const movableHeight = movable.getBoundingClientRect().height;
       card.addEventListener("mousemove", function (event) {
-        let posX = event.screenX - 0.5 * width + 0.5 * movableWidth;
+        let posX = event.screenX - 0.5 * width - 0.5 * movableWidth;
         let posY = event.screenY - 0.5 * height - 0.5 * movableHeight;
-        gsap.set(movable, { y: posY, x: posX, delay: 0.2 });
+        gsap.to(movable, { y: posY, x: posX, delay: 0.2 });
       });
     });
     let tween = gsap
